@@ -1,61 +1,42 @@
-# SOMAD
 
-## 运行
+# Anomaly Detection via Self-Organizing Map
+
+## Introduction
+This paper is accepted by ICIP 2021.
+
+SOMAD is a novel unsupervised anomaly detection approach based on Self-organizing Map (SOM)
+
+For more details, please refer to our [paper](https://arxiv.org/abs/2107.09903).
+
+## Requirements
+- torch
+- torchvision
+- numpy
+- opencv
+
+## How to use
 python somad.py --dataset mvtec
 
-## 默认参数说明
+## Dataset
+we use the [MVTec dataset](https://www.mvtec.com/company/research/datasets/mvtec-ad), please prepare dataset like below
 
-1.默认数据集 mvtec
-
-2.默认数据集存放地址：./mvtec存放解压后的数据集
-
-数据集划分和文件夹请参考代码自行实现
 eg:
 ./mvtec/bottle
 ....
 
-3.默认结果保存结果根目录 ./result
+## TODO List
+- [ ] Relase the models
+- [ ] Update train doc
 
-4.默认top_k 4
 
-5.默认聚类数 3136
-
-6.聚类方法,通过cluster_device参数来设置：
-- cpu基于numpy的sompy库(对初始化部分有修改，具体sompy/sompy.py和codebook.py)
-- gpu 基于pytorch的kmeans算法（初始化也有修改，kmeans.py）
-7.目前最好的score计算方式： mahalanobis
-
-## 保存结果文件夹组织
-
-./result
-
-	mvtec
-		gts
-		
-		 {类别}.pkl	ground truth保存成文件
-		 
-		method
-		
-			network
-			
-				dimensions
-				
-					clusters 聚类结果
-					
-						cpu聚类方法
-						
-							类别+聚类数.pkl
-							
-						gpu
-						
-					evaluation
-					
-						{聚类数}centers_top{k}_{score_type}
-						
-							visualize可视化
-							
-							result.pkl 评测中间结果的数据
-							
-							roc_auc.png roc_auc图
-							
-					feats 实际未保存特征。
+## Citation
+If you find SOMAD useful in your research, please consider citing:
+```
+@article{Li2021AnomalyDV,
+  title={Anomaly Detection Via Self-Organizing Map},
+  author={Ning Li and Kaitao Jiang and Zhiheng Ma and Xing Wei and Xiaopeng Hong and Yihong Gong},
+  journal={2021 IEEE International Conference on Image Processing (ICIP)},
+  year={2021},
+  pages={974-978}
+}
+```
