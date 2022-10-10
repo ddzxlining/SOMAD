@@ -19,13 +19,13 @@ python somad.py --dataset mvtec
 
 ## Dataset
 we use the [MVTec dataset](https://www.mvtec.com/company/research/datasets/mvtec-ad), please prepare dataset like below
-
-eg:
+```
 ./mvtec/bottle
-....
-
+./mvtec/xxx
+...
+```
 ## TODO List
-- [ ] Relase the models
+- [ ] Release the models trained using MVTec dataset
 - [ ] Update train doc
 
 
